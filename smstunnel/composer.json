@@ -1,0 +1,26 @@
+{
+    "name": "narcisbodea/smstunnel-prestashop",
+    "description": "SMSTunnel: SMS notifications for PrestaShop. Order texts from your own Android phone and your own number.",
+    "homepage": "https://smstunnel.io",
+    "license": "MIT",
+    "type": "prestashop-module",
+    "authors": [
+        {
+            "name": "Narcis Bodea",
+            "email": "contact@narboweb.ro"
+        }
+    ],
+    "require": {
+        "php": ">=7.2.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "SmsTunnel\\PrestaShop\\": "src/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "platform-check": false,
+        "prepend-autoloader": false
+    }
+}

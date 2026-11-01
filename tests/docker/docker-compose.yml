@@ -1,0 +1,46 @@
+# A throwaway PrestaShop shop to test the module. One shop per compose project:
+#   PS_IMAGE=prestashop/prestashop:8.1.7-7.4-apache PS_PORT=8471 docker compose -p smst-int-ps8 -f tests/docker/docker-compose.yml up -d
+#   PS_IMAGE=prestashop/prestashop:9.2.0            PS_PORT=8472 docker compose -p smst-int-ps9 -f tests/docker/docker-compose.yml up -d
+# Tear down with: docker compose -p <project> -f tests/docker/docker-compose.yml down -v
+#
+# The shop reaches a SMSTunnel test server on the host at http://host.docker.internal:<port>.
+services:
+  db:
+    image: mariadb:10.11
+    environment:
+      MARIADB_ROOT_PASSWORD: prestashop
+      MARIADB_DATABASE: prestashop
+    command: ["--innodb-buffer-pool-size=64M", "--performance-schema=OFF", "--max-connections=40"]
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+
+  prestashop:
+    image: ${PS_IMAGE:-prestashop/prestashop:8.1.7-7.4-apache}
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:${PS_PORT:-8471}:80"
+    environment:
+      DB_SERVER: db
+      DB_NAME: prestashop
+      DB_USER: root
+      DB_PASSWD: prestashop
+      DB_PREFIX: ps_
+      PS_INSTALL_AUTO: 1
+      PS_ERASE_DB: 0
+      PS_DOMAIN: localhost:${PS_PORT:-8471}
+      PS_FOLDER_ADMIN: admin-dev
+      PS_FOLDER_INSTALL: install-dev
+      PS_DEV_MODE: 1
+      PS_LANGUAGE: en
+      PS_COUNTRY: FR
+      PS_ALL_LANGUAGES: 0
+      PS_ENABLE_SSL: 0
+      ADMIN_MAIL: demo@prestashop.com
+      ADMIN_PASSWD: Smstunnel-test-2026
+    extra_hosts:
+      - "host.docker.internal:host-gateway"

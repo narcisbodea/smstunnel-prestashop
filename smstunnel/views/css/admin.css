@@ -1,0 +1,44 @@
+/**
+ * SMSTunnel: SMS notifications for PrestaShop.
+ *
+ * @author    Narcis Bodea <contact@narboweb.ro>
+ * @copyright 2026 NARBOWEB SRL
+ * @license   https://opensource.org/licenses/MIT MIT License
+ */
+.smstunnel-panel .smstunnel-steps li {
+  margin-bottom: 6px;
+}
+
+.smstunnel-panel .smstunnel-phones {
+  max-width: 760px;
+}
+
+.smstunnel-panel .smstunnel-test {
+  margin-top: 12px;
+}
+
+.smstunnel-panel .smstunnel-test .form-control {
+  min-width: 220px;
+  margin: 0 8px;
+}
+
+.smstunnel-panel .smstunnel-last-failure {
+  margin-top: 15px;
+}
+
+.smstunnel-log .smstunnel-message {
+  color: #6c868e;
+  max-width: 520px;
+  white-space: normal;
+}
+
+.smstunnel-log .smstunnel-detail {
+  color: #6c868e;
+  font-size: 12px;
+  margin-top: 4px;
+  max-width: 320px;
+}
+
+.smstunnel-nowrap {
+  white-space: nowrap;
+}

@@ -1,0 +1,11 @@
+/build/
+/smstunnel/vendor/
+/smstunnel/composer.lock
+/tests/e2e/node_modules/
+/tests/e2e/results/
+/tools/dev/
+.php-cs-fixer.cache
+.phpunit.result.cache
+config_*.xml
+.env
+*.log
