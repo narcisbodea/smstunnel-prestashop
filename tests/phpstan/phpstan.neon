@@ -1,0 +1,15 @@
+# PHPStan with PrestaShop's module extension (prestashop/php-dev-tools), run inside a PrestaShop install:
+#   _PS_ROOT_DIR_=/var/www/html php tools/dev/vendor/bin/phpstan analyse -c tests/phpstan/phpstan.neon
+# tools/check-static.sh runs it against PrestaShop 8.1 and 9.2 in the test containers.
+includes:
+  - ../../tools/dev/vendor/prestashop/php-dev-tools/phpstan/ps-module-extension.neon
+
+parameters:
+  level: 6
+  phpVersion: 70205
+  tmpDir: /tmp/phpstan-smstunnel
+  paths:
+    - ../../smstunnel/smstunnel.php
+    - ../../smstunnel/src
+  excludePaths:
+    - ../../smstunnel/vendor

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * SMSTunnel: SMS notifications for PrestaShop.
  *
@@ -23,25 +24,25 @@ if (!defined('_PS_VERSION_')) {
 final class PhoneNumber
 {
     /** The number is fine. */
-    const OK = '';
+    public const OK = '';
 
     /** No number was given. */
-    const MISSING = 'missing';
+    public const MISSING = 'missing';
 
     /** Not a phone number SMSTunnel can text. */
-    const INVALID = 'invalid';
+    public const INVALID = 'invalid';
 
     /** A premium-rate number, a short code or a satellite network. */
-    const PREMIUM = 'premium';
+    public const PREMIUM = 'premium';
 
     /**
      * Calling codes of the countries where the leading 0 belongs to the number itself (Italy, San Marino,
      * Vatican, Côte d'Ivoire, Benin, Gabon, Republic of the Congo), so it stays after the calling code.
      */
-    const KEEP_LEADING_ZERO = ['39', '378', '379', '225', '229', '241', '242'];
+    public const KEEP_LEADING_ZERO = ['39', '378', '379', '225', '229', '241', '242'];
 
     /** Kept in sync with SMSTunnel::is_premium_number() of the WordPress plugin. */
-    const PREMIUM_PATTERNS = [
+    public const PREMIUM_PATTERNS = [
         '/^\+40(90|80)[0-9]+$/',
         '/^\+44(90|91|98)[0-9]+$/',
         '/^\+1(900)[0-9]+$/',
@@ -52,7 +53,7 @@ final class PhoneNumber
     ];
 
     /** Satellite networks the SMSTunnel server refuses (Iridium, Thuraya, Inmarsat, Globalstar...). */
-    const BLOCKED_PREFIXES = ['+8816', '+8817', '+88216', '+88217', '+870', '+871', '+872', '+873', '+874', '+881', '+882'];
+    public const BLOCKED_PREFIXES = ['+8816', '+8817', '+88216', '+88217', '+870', '+871', '+872', '+873', '+874', '+881', '+882'];
 
     /**
      * The number in E.164 format, or an empty string when it is missing, invalid or not allowed.

@@ -39,6 +39,10 @@
   max-width: 320px;
 }
 
+.smstunnel-log .smstunnel-resend {
+  margin-top: 6px;
+}
+
 .smstunnel-nowrap {
   white-space: nowrap;
 }

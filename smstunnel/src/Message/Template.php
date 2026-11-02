@@ -1,4 +1,5 @@
 <?php
+
 /**
  * SMSTunnel: SMS notifications for PrestaShop.
  *
@@ -20,10 +21,10 @@ if (!defined('_PS_VERSION_')) {
 final class Template
 {
     /** The longest text SMSTunnel accepts (10 joined SMS). */
-    const MAX_LENGTH = 1600;
+    public const MAX_LENGTH = 1600;
 
     /** The placeholders a text can use. */
-    const PLACEHOLDERS = [
+    public const PLACEHOLDERS = [
         'firstname',
         'lastname',
         'order_reference',

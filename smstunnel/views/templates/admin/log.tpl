@@ -50,6 +50,17 @@
                 {if $row.detail}
                   <div class="smstunnel-detail">{$row.detail|escape:'html':'UTF-8'}</div>
                 {/if}
+                {if $row.attempts > 1}
+                  <div class="smstunnel-detail">{l s='Tried %d times' sprintf=[$row.attempts] d='Modules.Smstunnel.Admin'}</div>
+                {/if}
+                {if $row.status == 'failed'}
+                  <form method="post" action="{$smstunnel_action|escape:'html':'UTF-8'}" class="smstunnel-resend">
+                    <input type="hidden" name="id_smstunnel_log" value="{$row.id|intval}">
+                    <button type="submit" class="btn btn-default btn-xs" name="submitSmstunnelResend" value="1">
+                      <i class="icon-refresh"></i> {l s='Send again' d='Modules.Smstunnel.Admin'}
+                    </button>
+                  </form>
+                {/if}
               </td>
             </tr>
           {/foreach}

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * SMSTunnel: SMS notifications for PrestaShop.
  *
@@ -107,8 +108,10 @@ final class OrderValues
             return ['', ''];
         }
         $number = trim((string) $row['tracking_number']);
-        $carrier = new \Carrier((int) $row['id_carrier'], (int) $order->id_lang);
-        $url = \Validate::isLoadedObject($carrier) ? trim((string) $carrier->url) : '';
+        $url = trim((string) \Db::getInstance()->getValue(
+            'SELECT `url` FROM `' . _DB_PREFIX_ . 'carrier` WHERE `id_carrier` = ' . (int) $row['id_carrier'],
+            false
+        ));
 
         return [$number, $url !== '' && strpos($url, '@') !== false ? str_replace('@', rawurlencode($number), $url) : ''];
     }

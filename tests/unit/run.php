@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Unit tests for the parts of the module that need no PrestaShop: phone numbers, texts, API errors, and
  * (with SMSTUNNEL_E2E_URL and SMSTUNNEL_E2E_KEY set) one real call to a local SMSTunnel test server.

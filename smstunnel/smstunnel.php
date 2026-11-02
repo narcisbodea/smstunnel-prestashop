@@ -1,4 +1,5 @@
 <?php
+
 /**
  * SMSTunnel: SMS notifications for PrestaShop.
  *
@@ -29,11 +30,11 @@ use SmsTunnel\PrestaShop\Settings;
 
 class Smstunnel extends Module
 {
-    const GOOGLE_PLAY_URL = 'https://play.google.com/store/apps/details?id=io.smstunnel.app';
-    const DASHBOARD_URL = 'https://dashboard.smstunnel.io/apps';
+    public const GOOGLE_PLAY_URL = 'https://play.google.com/store/apps/details?id=io.smstunnel.app';
+    public const DASHBOARD_URL = 'https://dashboard.smstunnel.io/apps';
 
     /** Texts longer than this are refused when saving (SMSTunnel accepts 1600 characters). */
-    const MAX_TEXT = 1600;
+    public const MAX_TEXT = 1600;
 
     /** @var Notifier|null */
     private $notifier;
@@ -55,11 +56,17 @@ class Smstunnel extends Module
         $this->confirmUninstall = $this->trans('Remove SMSTunnel, its settings and its log of texts?', [], 'Modules.Smstunnel.Admin');
     }
 
+    /**
+     * @return bool
+     */
     public function isUsingNewTranslationSystem()
     {
         return true;
     }
 
+    /**
+     * @return bool
+     */
     public function install()
     {
         if (Shop::isFeatureActive()) {
@@ -85,6 +92,9 @@ class Smstunnel extends Module
             ]);
     }
 
+    /**
+     * @return bool
+     */
     public function uninstall()
     {
         if (!parent::uninstall()) {
@@ -101,17 +111,20 @@ class Smstunnel extends Module
      * A new order: text the shop owner. Never stops the checkout.
      *
      * @param array<string, mixed> $params
+     *
+     * @return void
      */
     public function hookActionValidateOrder($params)
     {
         $order = isset($params['order']) ? $params['order'] : null;
+        if (!$order instanceof Order) {
+            return;
+        }
         try {
-            if ($order instanceof Order) {
-                $state = isset($params['orderStatus']) && $params['orderStatus'] instanceof OrderState ? $params['orderStatus'] : null;
-                $this->getNotifier()->newOrder($order, $state);
-            }
+            $state = isset($params['orderStatus']) && $params['orderStatus'] instanceof OrderState ? $params['orderStatus'] : null;
+            $this->getNotifier()->newOrder($order, $state);
         } catch (Throwable $e) {
-            $this->logFailure('new-order text: ' . $e->getMessage(), $order instanceof Order ? (int) $order->id : 0);
+            $this->logFailure('new-order text: ' . $e->getMessage(), (int) $order->id);
         }
     }
 
@@ -119,6 +132,8 @@ class Smstunnel extends Module
      * An order changed status: text the customer if the merchant chose that status. Never stops the page.
      *
      * @param array<string, mixed> $params
+     *
+     * @return void
      */
     public function hookActionOrderStatusPostUpdate($params)
     {
@@ -170,6 +185,8 @@ class Smstunnel extends Module
 
     /**
      * The module's configuration page.
+     *
+     * @return string
      */
     public function getContent()
     {
@@ -178,6 +195,8 @@ class Smstunnel extends Module
             $output .= $this->saveSettings();
         } elseif (Tools::isSubmit('submitSmstunnelTest')) {
             $output .= $this->sendTestText();
+        } elseif (Tools::isSubmit('submitSmstunnelResend')) {
+            $output .= $this->resendText((int) Tools::getValue('id_smstunnel_log'));
         }
 
         $this->context->controller->addCSS($this->_path . 'views/css/admin.css');
@@ -306,6 +325,34 @@ class Smstunnel extends Module
         }
         if ($result['status'] === TextLog::SENT) {
             return $this->displayConfirmation($this->escape($this->trans('Test text sent to %s. It leaves from your phone in a moment.', [$number], 'Modules.Smstunnel.Admin')));
+        }
+
+        return $this->displayError($this->escape($this->describeError($result['exception'], $result['error'])));
+    }
+
+    /**
+     * Sends a text that did not go out once more, from the log.
+     */
+    private function resendText(int $id): string
+    {
+        $row = $this->getTextLog()->find($id);
+        if ($row === null || $row['status'] !== TextLog::FAILED) {
+            return $this->displayError($this->escape($this->trans('Only a text that did not go out can be sent again.', [], 'Modules.Smstunnel.Admin')));
+        }
+        $settings = new Settings(null, (int) $row['id_shop'] > 0 ? (int) $row['id_shop'] : null);
+        if ($settings->apiKey() === '') {
+            return $this->displayError($this->escape($this->trans('Save your API key first.', [], 'Modules.Smstunnel.Admin')));
+        }
+        $result = $this->getNotifier()->resend($settings, $row);
+        $number = (string) $row['recipient'];
+        if ($result === null) {
+            return $this->displayError($this->escape($this->trans('Only a text that did not go out can be sent again.', [], 'Modules.Smstunnel.Admin')));
+        }
+        if ($result['status'] === TextLog::QUEUED) {
+            return $this->displayWarning($this->escape($this->trans('Your phone is offline. The text to %s waits on your account and goes out when the phone is back online.', [$number], 'Modules.Smstunnel.Admin')));
+        }
+        if ($result['status'] === TextLog::SENT) {
+            return $this->displayConfirmation($this->escape($this->trans('Text sent again to %s.', [$number], 'Modules.Smstunnel.Admin')));
         }
 
         return $this->displayError($this->escape($this->describeError($result['exception'], $result['error'])));
@@ -519,7 +566,7 @@ class Smstunnel extends Module
         $helper->table = $this->table;
         $helper->identifier = $this->identifier;
         $helper->token = Tools::getAdminTokenLite('AdminModules');
-        $helper->currentIndex = AdminController::$currentIndex . '&' . http_build_query(['configure' => $this->name]);
+        $helper->currentIndex = $this->moduleAdminLink();
         $helper->submit_action = 'submitSmstunnelSettings';
         $helper->default_form_language = $idLangDefault;
         $helper->allow_employee_form_lang = (int) Configuration::get('PS_BO_ALLOW_EMPLOYEE_FORM_LANG');
@@ -537,7 +584,6 @@ class Smstunnel extends Module
      */
     private function renderLog(): string
     {
-        $idLang = (int) $this->context->language->id;
         $stateNames = [];
         foreach ($this->orderStates() as $state) {
             $stateNames[(int) $state['id_order_state']] = (string) $state['name'];
@@ -568,6 +614,7 @@ class Smstunnel extends Module
             }
             $error = (string) $row['error'];
             $rows[] = [
+                'id' => (int) $row['id_smstunnel_log'],
                 'date' => (string) $row['date_upd'],
                 'what' => $what,
                 'order' => (int) $row['id_order'] > 0 ? (string) ($row['reference'] ?: '#' . (int) $row['id_order']) : '',
@@ -581,7 +628,10 @@ class Smstunnel extends Module
             ];
         }
 
-        $this->context->smarty->assign(['smstunnel_log' => $rows, 'smstunnel_lang' => $idLang]);
+        $this->context->smarty->assign([
+            'smstunnel_log' => $rows,
+            'smstunnel_action' => $this->configureUrl(),
+        ]);
 
         return $this->context->smarty->fetch($this->local_path . 'views/templates/admin/log.tpl');
     }
@@ -624,9 +674,7 @@ class Smstunnel extends Module
      */
     private function orderStates(): array
     {
-        $states = OrderState::getOrderStates((int) $this->context->language->id);
-
-        return is_array($states) ? $states : [];
+        return OrderState::getOrderStates((int) $this->context->language->id);
     }
 
     /**
@@ -650,12 +698,25 @@ class Smstunnel extends Module
         return $ids;
     }
 
+    /**
+     * The module's configuration page, without its token (as native modules build it: an absolute link
+     * that works whether the page is shown by the legacy controller or by PrestaShop 9's route).
+     */
+    private function moduleAdminLink(): string
+    {
+        return $this->context->link->getAdminLink('AdminModules', false) . '&' . http_build_query([
+            'configure' => $this->name,
+            'tab_module' => $this->tab,
+            'module_name' => $this->name,
+        ]);
+    }
+
+    /**
+     * The module's configuration page, with its token: where the page's own forms post.
+     */
     private function configureUrl(): string
     {
-        return AdminController::$currentIndex . '&' . http_build_query([
-            'configure' => $this->name,
-            'token' => Tools::getAdminTokenLite('AdminModules'),
-        ]);
+        return $this->moduleAdminLink() . '&token=' . Tools::getAdminTokenLite('AdminModules');
     }
 
     private function orderUrl(int $idOrder): string
@@ -703,7 +764,7 @@ class Smstunnel extends Module
      * Writes a failure to PrestaShop's log with core classes only, so it works even if the module's own
      * classes could not be loaded.
      */
-    private function logFailure(string $message, int $idOrder)
+    private function logFailure(string $message, int $idOrder): void
     {
         try {
             $clean = trim((string) preg_replace('/[<>{}]+/', ' ', 'SMSTunnel: ' . $message));

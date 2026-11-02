@@ -1,4 +1,5 @@
 <?php
+
 /**
  * SMSTunnel: SMS notifications for PrestaShop.
  *
@@ -28,10 +29,10 @@ use SmsTunnel\PrestaShop\Phone\PhoneNumber;
 final class Notifier
 {
     /** Seconds a send may take while a customer checks out. */
-    const TIMEOUT = 8;
+    public const TIMEOUT = 8;
 
     /** Seconds to wait for a connection to SMSTunnel. */
-    const CONNECT_TIMEOUT = 3;
+    public const CONNECT_TIMEOUT = 3;
 
     /** @var TextLog */
     private $log;
@@ -58,7 +59,7 @@ final class Notifier
      *
      * @param \OrderState|null $orderState the order's first status
      */
-    public function newOrder(\Order $order, $orderState = null)
+    public function newOrder(\Order $order, $orderState = null): void
     {
         $settings = new Settings((int) $order->id_shop_group, (int) $order->id_shop);
         if ($settings->apiKey() === '' || !$settings->ownerEnabled()) {
@@ -97,7 +98,7 @@ final class Notifier
      * @param \OrderState|null $newState
      * @param \OrderState|null $oldState
      */
-    public function statusChanged(int $idOrder, $newState, $oldState = null)
+    public function statusChanged(int $idOrder, $newState, $oldState = null): void
     {
         if ($idOrder <= 0 || !$newState instanceof \OrderState || (int) $newState->id <= 0) {
             return;
@@ -157,6 +158,26 @@ final class Notifier
         if ($id > 0) {
             $this->log->finish($id, $result['status'], $result['messageId'], $result['error']);
         }
+
+        return $result;
+    }
+
+    /**
+     * Sends a text that did not go out once more, as it was written.
+     *
+     * @param array<string, mixed> $row a row of the log
+     *
+     * @return array{status: string, messageId: string, error: string, exception: \Throwable|null}|null null
+     *                                                                                                  when the text is not failed (any more)
+     */
+    public function resend(Settings $settings, array $row)
+    {
+        $id = (int) $row['id_smstunnel_log'];
+        if (!$this->log->retry($id)) {
+            return null;
+        }
+        $result = $this->send($settings, (string) $row['recipient'], (string) $row['message'], '', 10, 4);
+        $this->log->finish($id, $result['status'], $result['messageId'], $result['error']);
 
         return $result;
     }
@@ -253,7 +274,7 @@ final class Notifier
      *
      * @param array{dedupe_key: string|null, event: string, id_order: int, id_order_state: int, id_shop: int, recipient: string, message: string} $text
      */
-    private function deliver(Settings $settings, array $text, string $problem, string $prefix)
+    private function deliver(Settings $settings, array $text, string $problem, string $prefix): void
     {
         $id = $this->log->claim($text);
         if ($id === 0) {
@@ -275,7 +296,7 @@ final class Notifier
     /**
      * Writes to PrestaShop's log (Advanced Parameters > Logs).
      */
-    public static function logError(string $message, int $idOrder = 0)
+    public static function logError(string $message, int $idOrder = 0): void
     {
         try {
             // The log refuses < > { } in a message.
@@ -288,6 +309,8 @@ final class Notifier
     }
 
     /**
+     * @param \Throwable|null $exception
+     *
      * @return array{status: string, messageId: string, error: string, exception: \Throwable|null}
      */
     private static function result(string $status, string $messageId, string $error, $exception = null): array

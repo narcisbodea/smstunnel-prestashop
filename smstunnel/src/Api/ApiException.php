@@ -1,4 +1,5 @@
 <?php
+
 /**
  * SMSTunnel: SMS notifications for PrestaShop.
  *
@@ -50,7 +51,7 @@ final class ApiException extends \RuntimeException
     }
 
     /** The `code` field of the answer, such as PERMISSION_REQUIRED, when SMSTunnel gave one. */
-    public function getErrorCode()
+    public function getErrorCode(): ?string
     {
         return $this->errorCode;
     }

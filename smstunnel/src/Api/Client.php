@@ -1,4 +1,5 @@
 <?php
+
 /**
  * SMSTunnel: SMS notifications for PrestaShop.
  *
@@ -21,7 +22,7 @@ if (!defined('_PS_VERSION_')) {
  */
 final class Client
 {
-    const DEFAULT_URL = 'https://smstunnel.io';
+    public const DEFAULT_URL = 'https://smstunnel.io';
 
     /** @var string */
     private $apiKey;

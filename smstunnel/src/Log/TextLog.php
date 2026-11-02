@@ -1,4 +1,5 @@
 <?php
+
 /**
  * SMSTunnel: SMS notifications for PrestaShop.
  *
@@ -22,19 +23,19 @@ if (!defined('_PS_VERSION_')) {
  */
 final class TextLog
 {
-    const TABLE = 'smstunnel_log';
+    public const TABLE = 'smstunnel_log';
 
     /** The log keeps the newest rows only. */
-    const KEEP = 1000;
+    public const KEEP = 1000;
 
-    const SENDING = 'sending';
-    const SENT = 'sent';
-    const QUEUED = 'queued';
-    const FAILED = 'failed';
-    const SKIPPED = 'skipped';
+    public const SENDING = 'sending';
+    public const SENT = 'sent';
+    public const QUEUED = 'queued';
+    public const FAILED = 'failed';
+    public const SKIPPED = 'skipped';
 
     /** A row left in "sending" this long (a request that died midway) can be tried again. */
-    const STALE_SECONDS = 600;
+    public const STALE_SECONDS = 600;
 
     public static function install(): bool
     {
@@ -125,9 +126,38 @@ final class TextLog
     }
 
     /**
+     * One row, or null.
+     *
+     * @return array<string, mixed>|null
+     */
+    public function find(int $id)
+    {
+        $row = \Db::getInstance()->getRow('SELECT * FROM `' . self::table() . '` WHERE `id_smstunnel_log` = ' . (int) $id, false);
+
+        return is_array($row) ? $row : null;
+    }
+
+    /**
+     * Takes a failed text back for another attempt. False when it is not failed (any more): someone else
+     * sent it again in the meantime, or it went out.
+     */
+    public function retry(int $id): bool
+    {
+        $db = \Db::getInstance();
+        $done = $db->execute(
+            'UPDATE `' . self::table() . '`
+            SET `status` = \'' . self::SENDING . '\', `attempts` = `attempts` + 1, `error` = NULL,
+                `date_upd` = \'' . pSQL(date('Y-m-d H:i:s')) . '\'
+            WHERE `id_smstunnel_log` = ' . (int) $id . ' AND `status` = \'' . self::FAILED . '\''
+        );
+
+        return $done && $db->Affected_Rows() > 0;
+    }
+
+    /**
      * Records how a reserved text ended.
      */
-    public function finish(int $id, string $status, string $messageId = '', string $error = '')
+    public function finish(int $id, string $status, string $messageId = '', string $error = ''): void
     {
         \Db::getInstance()->execute(
             'UPDATE `' . self::table() . '`
@@ -215,7 +245,7 @@ final class TextLog
     /**
      * Keeps the newest KEEP rows.
      */
-    public function prune()
+    public function prune(): void
     {
         $db = \Db::getInstance();
         // executeS, not getValue: getValue() appends its own LIMIT 1.

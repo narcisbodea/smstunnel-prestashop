@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file original="smstunnel" source-language="en-US" target-language="es-ES" datatype="plaintext">
+    <body>
+      <trans-unit id="99167943bb9040fe280cfc6ff00a96cd">
+        <source>%s is not a mobile number SMSTunnel can text. Write it in international format, such as +33612345678.</source>
+        <target>%s no es un número de móvil al que SMSTunnel pueda enviar SMS. Escríbalo en formato internacional, por ejemplo +34612345678.</target>
+      </trans-unit>
+      <trans-unit id="2789ead509cc571a2833835fafaae277">
+        <source>A key is saved (%s). Leave this field empty to keep it.</source>
+        <target>Hay una clave guardada (%s). Deje este campo vacío para conservarla.</target>
+      </trans-unit>
+      <trans-unit id="84a26e0782dd2775d30f1c282cc2e2a5">
+        <source>A text can be at most %d characters long.</source>
+        <target>Un SMS puede tener como máximo %d caracteres.</target>
+      </trans-unit>
+      <trans-unit id="656a6828d7ef1bb791e42087c4b5ee6e">
+        <source>API key</source>
+        <target>Clave API</target>
+      </trans-unit>
+      <trans-unit id="ca8bf3cf804c6d1886ccadba061173d3">
+        <source>Add your number for new-order texts, or turn them off.</source>
+        <target>Añada su número para los SMS de nuevos pedidos, o desactívelos.</target>
+      </trans-unit>
+      <trans-unit id="9b6545e4cea9b4ad4979d41bb9170e2b">
+        <source>Advanced</source>
+        <target>Avanzado</target>
+      </trans-unit>
+      <trans-unit id="44749712dbec183e983dcd78a7736c41">
+        <source>Date</source>
+        <target>Fecha</target>
+      </trans-unit>
+      <trans-unit id="966a80fef43e1a294132c07577eb04ed">
+        <source>For testing only. Your shop uses https://smstunnel.io: change it only to try the module with a test server.</source>
+        <target>Solo para pruebas. Su tienda usa https://smstunnel.io: cámbielo solo para probar el módulo con un servidor de pruebas.</target>
+      </trans-unit>
+      <trans-unit id="4b66a5f1b8674851f5bd2a7b134db98f">
+        <source>Get it on Google Play</source>
+        <target>Disponible en Google Play</target>
+      </trans-unit>
+      <trans-unit id="6e96773630e42b79f4aa699c5a703e30">
+        <source>Get started in three steps</source>
+        <target>Empiece en tres pasos</target>
+      </trans-unit>
+      <trans-unit id="ea3ecc67a19e6962d81112661324ebe5">
+        <source>Hello {firstname}, we are preparing your order {order_reference} from {shop_name}.</source>
+        <target>Hola {firstname}, estamos preparando tu pedido {order_reference} de {shop_name}.</target>
+      </trans-unit>
+      <trans-unit id="19365e84c77e6d3e81a516f68f43485c">
+        <source>Hello {firstname}, we have received your payment of {total_paid} for order {order_reference}. Thank you for shopping at {shop_name}!</source>
+        <target>Hola {firstname}, hemos recibido tu pago de {total_paid} del pedido {order_reference}. ¡Gracias por comprar en {shop_name}!</target>
+      </trans-unit>
+      <trans-unit id="39f510cd2a7c65ed9413b838b0be7e64">
+        <source>Hello {firstname}, your order {order_reference} from {shop_name} has been canceled. Reply to this text if you have any questions.</source>
+        <target>Hola {firstname}, tu pedido {order_reference} de {shop_name} ha sido cancelado. Responde a este SMS si tienes alguna pregunta.</target>
+      </trans-unit>
+      <trans-unit id="32884bc8808918422c79d5b2f451794e">
+        <source>Hello {firstname}, your order {order_reference} from {shop_name} has been delivered. Thank you!</source>
+        <target>Hola {firstname}, tu pedido {order_reference} de {shop_name} ha sido entregado. ¡Gracias!</target>
+      </trans-unit>
+      <trans-unit id="5ff9bf440f4e0d9f17f347f8820a800f">
+        <source>Hello {firstname}, your order {order_reference} from {shop_name} has been refunded.</source>
+        <target>Hola {firstname}, tu pedido {order_reference} de {shop_name} ha sido reembolsado.</target>
+      </trans-unit>
+      <trans-unit id="07b6e3501da61f6003ca5f2c9fe479dc">
+        <source>Hello {firstname}, your order {order_reference} from {shop_name} is now: {status}.</source>
+        <target>Hola {firstname}, el estado de tu pedido {order_reference} de {shop_name} es ahora: {status}.</target>
+      </trans-unit>
+      <trans-unit id="eab41246999368a7e16a19e7c0a4d264">
+        <source>Hello {firstname}, your order {order_reference} from {shop_name} is on its way. {tracking_url}</source>
+        <target>Hola {firstname}, tu pedido {order_reference} de {shop_name} ya va de camino. {tracking_url}</target>
+      </trans-unit>
+      <trans-unit id="ff7396b86391170d9963ec7b915f12e5">
+        <source>In your SMSTunnel dashboard, open Apps, then Add an app, and copy its key.</source>
+        <target>En su panel de SMSTunnel, abra Apps, luego Add an app, y copie su clave.</target>
+      </trans-unit>
+      <trans-unit id="80743580fbad9abe5dde187ee0783b1d">
+        <source>Install the SMSTunnel app on your Android phone and sign in.</source>
+        <target>Instale la aplicación SMSTunnel en su teléfono Android e inicie sesión.</target>
+      </trans-unit>
+      <trans-unit id="b417670b709ed80ab0e146194f8575d0">
+        <source>Last text that did not go out:</source>
+        <target>Último SMS que no se envió:</target>
+      </trans-unit>
+      <trans-unit id="299c7d50213965a3ffb9dbaa64f05ad3">
+        <source>New order, text to you</source>
+        <target>Nuevo pedido, SMS para usted</target>
+      </trans-unit>
+      <trans-unit id="38e79db3d01fc46f7f51f0a5e6888c6b">
+        <source>New orders: a text to you</source>
+        <target>Nuevos pedidos: un SMS para usted</target>
+      </trans-unit>
+      <trans-unit id="1380186c5cb1ac08f1a6be339d035d66">
+        <source>New-order texts can go to at most %d numbers.</source>
+        <target>Los SMS de nuevos pedidos pueden ir a %d números como máximo.</target>
+      </trans-unit>
+      <trans-unit id="bceceef747cc4c1416decca622073035">
+        <source>No mobile number on the order address.</source>
+        <target>No hay número de móvil en la dirección del pedido.</target>
+      </trans-unit>
+      <trans-unit id="10b5d4427ada9a6f95876870b668ccb6">
+        <source>No phone is linked to your account yet. Install the SMSTunnel app on your Android phone and sign in, or link it from Phones, then Add phone, in your dashboard.</source>
+        <target>Todavía no hay ningún teléfono vinculado a su cuenta. Instale la aplicación SMSTunnel en su teléfono Android e inicie sesión, o vincúlelo desde Phones, luego Add phone, en su panel.</target>
+      </trans-unit>
+      <trans-unit id="2139bc444f1fb97a47ad2c8fee38380f">
+        <source>No texts were sent about this customer.</source>
+        <target>No se ha enviado ningún SMS sobre este cliente.</target>
+      </trans-unit>
+      <trans-unit id="6c8cde9b2e6121aca8903d957f95f9bd">
+        <source>No texts yet. They show up here as orders come in.</source>
+        <target>Todavía no hay SMS. Aparecerán aquí a medida que lleguen los pedidos.</target>
+      </trans-unit>
+      <trans-unit id="3c8d5a29d8493af7344222d7767eb978">
+        <source>Not sent</source>
+        <target>No enviado</target>
+      </trans-unit>
+      <trans-unit id="b2ee912b91d69b435159c7c3f6df7f5f">
+        <source>Number</source>
+        <target>Número</target>
+      </trans-unit>
+      <trans-unit id="8d9da4bc0e49a50e09ac9f7e56789d39">
+        <source>Offline</source>
+        <target>Sin conexión</target>
+      </trans-unit>
+      <trans-unit id="4c468bca167702bcd80be807aaf4e873">
+        <source>One or more numbers (at most 5), separated by commas, in international format such as +33612345678.</source>
+        <target>Uno o varios números (5 como máximo), separados por comas, en formato internacional, por ejemplo +34612345678.</target>
+      </trans-unit>
+      <trans-unit id="54f664c70c22054ea0d8d26fc3997ce7">
+        <source>Online</source>
+        <target>En línea</target>
+      </trans-unit>
+      <trans-unit id="afdb5b774f5a2e83cf82181fe87f7256">
+        <source>Only a text that did not go out can be sent again.</source>
+        <target>Solo se puede volver a enviar un SMS que no se envió.</target>
+      </trans-unit>
+      <trans-unit id="265cebfe72ed6d5409541ce9383ad49f">
+        <source>Open the dashboard</source>
+        <target>Abrir el panel</target>
+      </trans-unit>
+      <trans-unit id="2100f8f9b2d8fc28ca7ff5e5fb3854bb">
+        <source>Optional. Leave it empty to send from any of your phones. To always use one phone, copy its ID from Phones in your SMSTunnel dashboard.</source>
+        <target>Opcional. Déjelo vacío para enviar desde cualquiera de sus teléfonos. Para usar siempre el mismo teléfono, copie su ID desde Phones en su panel de SMSTunnel.</target>
+      </trans-unit>
+      <trans-unit id="a240fa27925a635b08dc28c9e4f9216d">
+        <source>Order</source>
+        <target>Pedido</target>
+      </trans-unit>
+      <trans-unit id="f66dcad8de0514176d8492ceaa9a53e1">
+        <source>Order updates: a text to the customer</source>
+        <target>Novedades del pedido: un SMS al cliente</target>
+      </trans-unit>
+      <trans-unit id="1302ad091bdbbb2f4c30b019496437eb">
+        <source>Paste the key below, add your number and save. Then send yourself a test text.</source>
+        <target>Pegue la clave abajo, añada su número y guarde. Después envíese un SMS de prueba.</target>
+      </trans-unit>
+      <trans-unit id="bcc254b55c4a1babdf1dcb82c207506b">
+        <source>Phone</source>
+        <target>Teléfono</target>
+      </trans-unit>
+      <trans-unit id="d3888448a58c1a1e99cb8555a2fc78ce">
+        <source>Phone ID</source>
+        <target>ID del teléfono</target>
+      </trans-unit>
+      <trans-unit id="e6475babd3a77ca559ebd54f8bd54165">
+        <source>Premium-rate numbers and short codes are never texted.</source>
+        <target>Nunca se envían SMS a números de tarificación especial ni a números cortos.</target>
+      </trans-unit>
+      <trans-unit id="b9139e607767e06b7a270b953f8828b8">
+        <source>Recent texts</source>
+        <target>SMS recientes</target>
+      </trans-unit>
+      <trans-unit id="917800a8cd157c69db8f7034083afdd3">
+        <source>Remove SMSTunnel, its settings and its log of texts?</source>
+        <target>¿Eliminar SMSTunnel, sus ajustes y su registro de SMS?</target>
+      </trans-unit>
+      <trans-unit id="6f35a7dbf930626bd638bdb3687311ea">
+        <source>SMSTunnel could not be reached: %s</source>
+        <target>No se pudo contactar con SMSTunnel: %s</target>
+      </trans-unit>
+      <trans-unit id="e83338972f53546b2c69e986d75e71b6">
+        <source>SMSTunnel had a problem (HTTP %d). Try again in a few minutes.</source>
+        <target>SMSTunnel tuvo un problema (HTTP %d). Inténtelo de nuevo en unos minutos.</target>
+      </trans-unit>
+      <trans-unit id="65b437a883329ea55eee802b8a2b70bb">
+        <source>SMSTunnel refused the API key. Check it in your SMSTunnel dashboard, under Apps.</source>
+        <target>SMSTunnel rechazó la clave API. Compruébela en su panel de SMSTunnel, en Apps.</target>
+      </trans-unit>
+      <trans-unit id="11f4fa6afa35b1597bacf05446ee549e">
+        <source>SMSTunnel refused the text: %s</source>
+        <target>SMSTunnel rechazó el SMS: %s</target>
+      </trans-unit>
+      <trans-unit id="256924fdae55beb0f7467aa8b2f431d9">
+        <source>SMSTunnel server</source>
+        <target>Servidor de SMSTunnel</target>
+      </trans-unit>
+      <trans-unit id="ade324c5d0510e68ab33a30175ce449f">
+        <source>SMSTunnel: SMS notifications</source>
+        <target>SMSTunnel: notificaciones SMS</target>
+      </trans-unit>
+      <trans-unit id="e15f84db8bca52904d29936bc829f338">
+        <source>SMSTunnel: texts from your own phone</source>
+        <target>SMSTunnel: SMS desde su propio teléfono</target>
+      </trans-unit>
+      <trans-unit id="38ff87749d5b0649cbb9ca59480cc44f">
+        <source>Save your API key first.</source>
+        <target>Guarde primero su clave API.</target>
+      </trans-unit>
+      <trans-unit id="7a984f27c235c35579f1a714355e40f6">
+        <source>Send a test text</source>
+        <target>Enviar un SMS de prueba</target>
+      </trans-unit>
+      <trans-unit id="46734ff92523b8bd195dad5a89f01f7e">
+        <source>Send a test text to</source>
+        <target>Enviar un SMS de prueba al</target>
+      </trans-unit>
+      <trans-unit id="50ab1d847e175723e3f782f780d72b16">
+        <source>Send again</source>
+        <target>Volver a enviar</target>
+      </trans-unit>
+      <trans-unit id="e4b0c2b6d59cb4cf3e169a9886008087">
+        <source>Sending</source>
+        <target>Enviando</target>
+      </trans-unit>
+      <trans-unit id="c141d895da94ee2a2c4609a02630aff7">
+        <source>Sends your texts</source>
+        <target>Envía sus SMS</target>
+      </trans-unit>
+      <trans-unit id="1bb8414788e1f06c16e0499f199884b0">
+        <source>Sent to the phone</source>
+        <target>Enviado al teléfono</target>
+      </trans-unit>
+      <trans-unit id="9a7e58ee13cb727cb7c4acc68f4cafe5">
+        <source>Settings saved.</source>
+        <target>Ajustes guardados.</target>
+      </trans-unit>
+      <trans-unit id="d9c8f187972e6320a34e9c40b4cba605">
+        <source>Skipped</source>
+        <target>Omitido</target>
+      </trans-unit>
+      <trans-unit id="46a2a41cc6e552044816a2d04634545d">
+        <source>State</source>
+        <target>Estado</target>
+      </trans-unit>
+      <trans-unit id="ec53a8c4f07baed5d8825072c89799be">
+        <source>Status</source>
+        <target>Estado</target>
+      </trans-unit>
+      <trans-unit id="6c3bffa30822da8ea25de435fa457f9b">
+        <source>Status: %s</source>
+        <target>Estado: %s</target>
+      </trans-unit>
+      <trans-unit id="1ddd098e85faf329eddf86df863a8f55">
+        <source>Test mode: texts go to this test server, not to smstunnel.io. Change it under Advanced.</source>
+        <target>Modo de prueba: los SMS van a este servidor de pruebas, no a smstunnel.io. Cámbielo en Avanzado.</target>
+      </trans-unit>
+      <trans-unit id="aaaf7028b8b9c6ce59bd3d1ee80869b3">
+        <source>Test text</source>
+        <target>SMS de prueba</target>
+      </trans-unit>
+      <trans-unit id="2e080e50385b07b734506f3a050f7a26">
+        <source>Test text sent to %s. It leaves from your phone in a moment.</source>
+        <target>SMS de prueba enviado al %s. Saldrá de su teléfono en un momento.</target>
+      </trans-unit>
+      <trans-unit id="9dffbf69ffba8bc38bc4e01abf4b1675">
+        <source>Text</source>
+        <target>Texto</target>
+      </trans-unit>
+      <trans-unit id="d6a2ad6d3ea4d0c7591b0bffc534d24d">
+        <source>Text customers about their orders</source>
+        <target>Enviar SMS a los clientes sobre sus pedidos</target>
+      </trans-unit>
+      <trans-unit id="37af2a1c8cf18354cef7169120a2a0af">
+        <source>Text for "%s"</source>
+        <target>Texto para «%s»</target>
+      </trans-unit>
+      <trans-unit id="eef39dcf5ae57929351df1d4ddb9823f">
+        <source>Text me about new orders</source>
+        <target>Enviarme un SMS con cada nuevo pedido</target>
+      </trans-unit>
+      <trans-unit id="6e81bf256c1ca17d84ebd0862657673b">
+        <source>Text sent again to %s.</source>
+        <target>SMS enviado de nuevo al %s.</target>
+      </trans-unit>
+      <trans-unit id="18382b686ed9f4e24ca00f5acf429b69">
+        <source>Text your customers about their orders, and yourself about new orders, from your own phone and your own number.</source>
+        <target>Envíe SMS a sus clientes sobre sus pedidos, y a usted mismo sobre los nuevos pedidos, desde su propio teléfono y su propio número.</target>
+      </trans-unit>
+      <trans-unit id="90bcc49318a67249a870a01dec718fb7">
+        <source>The number on the order address is not a mobile number SMSTunnel can text.</source>
+        <target>El número de la dirección del pedido no es un número de móvil al que SMSTunnel pueda enviar SMS.</target>
+      </trans-unit>
+      <trans-unit id="1c3e074574fdb97ce0bd51eadd8a3c33">
+        <source>The phone ID saved below is not one of these phones. Copy it again, or leave the field empty to send from any of your phones.</source>
+        <target>El ID de teléfono guardado abajo no corresponde a ninguno de estos teléfonos. Cópielo de nuevo, o deje el campo vacío para enviar desde cualquiera de sus teléfonos.</target>
+      </trans-unit>
+      <trans-unit id="dd080de54ec1002f39d891016ff2cafd">
+        <source>The server address must start with https:// (or http:// for a test server).</source>
+        <target>La dirección del servidor debe empezar por https:// (o http:// para un servidor de pruebas).</target>
+      </trans-unit>
+      <trans-unit id="b14a265b33314621bf41aac86381b13c">
+        <source>The text goes to the mobile number of the order address, in the language of the order. Customers can reply: the answer reaches your phone.</source>
+        <target>El SMS va al número de móvil de la dirección del pedido, en el idioma del pedido. Los clientes pueden responder: la respuesta llega a su teléfono.</target>
+      </trans-unit>
+      <trans-unit id="7e36b358f748e9538d9ab4264d1389c2">
+        <source>The texts about this customer could not be deleted.</source>
+        <target>No se pudieron eliminar los SMS sobre este cliente.</target>
+      </trans-unit>
+      <trans-unit id="5ebca9bad8cbdf8fdb250b13423086c4">
+        <source>This API key may not send texts. Create a new one under Apps, then Add an app.</source>
+        <target>Esta clave API no puede enviar SMS. Cree una nueva en Apps, luego Add an app.</target>
+      </trans-unit>
+      <trans-unit id="d6f97b859723081b73c2de52a762128a">
+        <source>This does not look like a phone ID. Copy it again from Phones in your SMSTunnel dashboard, or leave the field empty.</source>
+        <target>Esto no parece un ID de teléfono. Cópielo de nuevo desde Phones en su panel de SMSTunnel, o deje el campo vacío.</target>
+      </trans-unit>
+      <trans-unit id="0f063b5e48a6b688d236fd9512f682fd">
+        <source>This does not look like an SMSTunnel API key. Copy it again from Apps in your SMSTunnel dashboard.</source>
+        <target>Esto no parece una clave API de SMSTunnel. Cópiela de nuevo desde Apps en su panel de SMSTunnel.</target>
+      </trans-unit>
+      <trans-unit id="cc180bc5e77fde6a27e4339b2e344aa1">
+        <source>This is a test text from {shop_name}. Your order texts will come from this phone.</source>
+        <target>Este es un SMS de prueba de {shop_name}. Los SMS de sus pedidos saldrán de este teléfono.</target>
+      </trans-unit>
+      <trans-unit id="054c8532f1d9ba57c47654c2fc9db45b">
+        <source>This log keeps the last 1000 texts. Uninstalling the module deletes it.</source>
+        <target>Este registro conserva los últimos 1000 SMS. Desinstalar el módulo lo elimina.</target>
+      </trans-unit>
+      <trans-unit id="c0f1a7545f23974c9f06ae071ef478d0">
+        <source>Too many texts at once, or the daily limit of your plan is reached. SMSTunnel says: %s</source>
+        <target>Demasiados SMS a la vez, o se alcanzó el límite diario de su plan. SMSTunnel indica: %s</target>
+      </trans-unit>
+      <trans-unit id="e616d6ba3037e82262f89c062fa757cb">
+        <source>Tried %d times</source>
+        <target>%d intentos</target>
+      </trans-unit>
+      <trans-unit id="87d8b7f1e2244199b1efe33cf727f8f7">
+        <source>Waiting for the phone</source>
+        <target>Esperando al teléfono</target>
+      </trans-unit>
+      <trans-unit id="03f4909bda7ad77b1b6eaa71643fe859">
+        <source>When the order status becomes</source>
+        <target>Cuando el estado del pedido pasa a</target>
+      </trans-unit>
+      <trans-unit id="4fb7ee9c5e59686e86432b474bd63b51">
+        <source>When the phone is offline, texts wait on your account and go out as soon as it is back online.</source>
+        <target>Cuando el teléfono está sin conexión, los SMS esperan en su cuenta y salen en cuanto vuelve a estar en línea.</target>
+      </trans-unit>
+      <trans-unit id="658ecf6cae2c487b3b6e20026422d1a4">
+        <source>You can use: %s</source>
+        <target>Puede usar: %s</target>
+      </trans-unit>
+      <trans-unit id="5f1d026259120017cc38de2f942dd7db">
+        <source>Your SMSTunnel account</source>
+        <target>Su cuenta de SMSTunnel</target>
+      </trans-unit>
+      <trans-unit id="270e074eacf5afb0f41b8d4e31081bea">
+        <source>Your numbers</source>
+        <target>Sus números</target>
+      </trans-unit>
+      <trans-unit id="940320b357d0fc6a503d55db3727da91">
+        <source>Your phone is offline. The test text to %s waits on your account and goes out when the phone is back online.</source>
+        <target>Su teléfono está sin conexión. El SMS de prueba al %s espera en su cuenta y saldrá cuando el teléfono vuelva a estar en línea.</target>
+      </trans-unit>
+      <trans-unit id="722b3aa91947907695f6b9bbc9f433a0">
+        <source>Your phone is offline. The text to %s waits on your account and goes out when the phone is back online.</source>
+        <target>Su teléfono está sin conexión. El SMS al %s espera en su cuenta y saldrá cuando el teléfono vuelva a estar en línea.</target>
+      </trans-unit>
+      <trans-unit id="4c74aafe67dda9472228d5d7f9527cdb">
+        <source>Your phones</source>
+        <target>Sus teléfonos</target>
+      </trans-unit>
+      <trans-unit id="c654a8868534ded496fe91e58421db9d">
+        <source>Your shop hands each text to your SMSTunnel account, and your Android phone sends it from its own SIM. Customers see your number and can reply to it.</source>
+        <target>Su tienda entrega cada SMS a su cuenta de SMSTunnel, y su teléfono Android lo envía desde su propia SIM. Sus clientes ven su número y pueden responder.</target>
+      </trans-unit>
+      <trans-unit id="840efe063120cacd812357b9ba67e242">
+        <source>{shop_name}: new order {order_reference} from {firstname} {lastname}, {total_paid}.</source>
+        <target>{shop_name}: nuevo pedido {order_reference} de {firstname} {lastname}, {total_paid}.</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

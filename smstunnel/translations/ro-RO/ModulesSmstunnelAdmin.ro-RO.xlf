@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file original="smstunnel" source-language="en-US" target-language="ro-RO" datatype="plaintext">
+    <body>
+      <trans-unit id="99167943bb9040fe280cfc6ff00a96cd">
+        <source>%s is not a mobile number SMSTunnel can text. Write it in international format, such as +33612345678.</source>
+        <target>%s nu este un număr de mobil la care SMSTunnel poate trimite SMS-uri. Scrieți-l în format internațional, de exemplu +40721123456.</target>
+      </trans-unit>
+      <trans-unit id="2789ead509cc571a2833835fafaae277">
+        <source>A key is saved (%s). Leave this field empty to keep it.</source>
+        <target>Este salvată o cheie (%s). Lăsați câmpul gol pentru a o păstra.</target>
+      </trans-unit>
+      <trans-unit id="84a26e0782dd2775d30f1c282cc2e2a5">
+        <source>A text can be at most %d characters long.</source>
+        <target>Un SMS poate avea cel mult %d de caractere.</target>
+      </trans-unit>
+      <trans-unit id="656a6828d7ef1bb791e42087c4b5ee6e">
+        <source>API key</source>
+        <target>Cheie API</target>
+      </trans-unit>
+      <trans-unit id="ca8bf3cf804c6d1886ccadba061173d3">
+        <source>Add your number for new-order texts, or turn them off.</source>
+        <target>Adăugați numărul dumneavoastră pentru SMS-urile despre comenzi noi sau dezactivați-le.</target>
+      </trans-unit>
+      <trans-unit id="9b6545e4cea9b4ad4979d41bb9170e2b">
+        <source>Advanced</source>
+        <target>Avansat</target>
+      </trans-unit>
+      <trans-unit id="44749712dbec183e983dcd78a7736c41">
+        <source>Date</source>
+        <target>Dată</target>
+      </trans-unit>
+      <trans-unit id="966a80fef43e1a294132c07577eb04ed">
+        <source>For testing only. Your shop uses https://smstunnel.io: change it only to try the module with a test server.</source>
+        <target>Doar pentru teste. Magazinul folosește https://smstunnel.io: schimbați adresa doar pentru a încerca modulul cu un server de test.</target>
+      </trans-unit>
+      <trans-unit id="4b66a5f1b8674851f5bd2a7b134db98f">
+        <source>Get it on Google Play</source>
+        <target>Descărcați de pe Google Play</target>
+      </trans-unit>
+      <trans-unit id="6e96773630e42b79f4aa699c5a703e30">
+        <source>Get started in three steps</source>
+        <target>Începeți în trei pași</target>
+      </trans-unit>
+      <trans-unit id="ea3ecc67a19e6962d81112661324ebe5">
+        <source>Hello {firstname}, we are preparing your order {order_reference} from {shop_name}.</source>
+        <target>Buna {firstname}, pregatim comanda ta {order_reference} de la {shop_name}.</target>
+      </trans-unit>
+      <trans-unit id="19365e84c77e6d3e81a516f68f43485c">
+        <source>Hello {firstname}, we have received your payment of {total_paid} for order {order_reference}. Thank you for shopping at {shop_name}!</source>
+        <target>Buna {firstname}, am primit plata de {total_paid} pentru comanda {order_reference}. Multumim ca ai cumparat de la {shop_name}!</target>
+      </trans-unit>
+      <trans-unit id="39f510cd2a7c65ed9413b838b0be7e64">
+        <source>Hello {firstname}, your order {order_reference} from {shop_name} has been canceled. Reply to this text if you have any questions.</source>
+        <target>Buna {firstname}, comanda ta {order_reference} de la {shop_name} a fost anulata. Raspunde la acest SMS daca ai intrebari.</target>
+      </trans-unit>
+      <trans-unit id="32884bc8808918422c79d5b2f451794e">
+        <source>Hello {firstname}, your order {order_reference} from {shop_name} has been delivered. Thank you!</source>
+        <target>Buna {firstname}, comanda ta {order_reference} de la {shop_name} a fost livrata. Multumim!</target>
+      </trans-unit>
+      <trans-unit id="5ff9bf440f4e0d9f17f347f8820a800f">
+        <source>Hello {firstname}, your order {order_reference} from {shop_name} has been refunded.</source>
+        <target>Buna {firstname}, comanda ta {order_reference} de la {shop_name} a fost rambursata.</target>
+      </trans-unit>
+      <trans-unit id="07b6e3501da61f6003ca5f2c9fe479dc">
+        <source>Hello {firstname}, your order {order_reference} from {shop_name} is now: {status}.</source>
+        <target>Buna {firstname}, comanda ta {order_reference} de la {shop_name} are acum statusul: {status}.</target>
+      </trans-unit>
+      <trans-unit id="eab41246999368a7e16a19e7c0a4d264">
+        <source>Hello {firstname}, your order {order_reference} from {shop_name} is on its way. {tracking_url}</source>
+        <target>Buna {firstname}, comanda ta {order_reference} de la {shop_name} este pe drum. {tracking_url}</target>
+      </trans-unit>
+      <trans-unit id="ff7396b86391170d9963ec7b915f12e5">
+        <source>In your SMSTunnel dashboard, open Apps, then Add an app, and copy its key.</source>
+        <target>În panoul SMSTunnel, deschideți Apps, apoi Add an app, și copiați cheia.</target>
+      </trans-unit>
+      <trans-unit id="80743580fbad9abe5dde187ee0783b1d">
+        <source>Install the SMSTunnel app on your Android phone and sign in.</source>
+        <target>Instalați aplicația SMSTunnel pe telefonul Android și autentificați-vă.</target>
+      </trans-unit>
+      <trans-unit id="b417670b709ed80ab0e146194f8575d0">
+        <source>Last text that did not go out:</source>
+        <target>Ultimul SMS care nu a plecat:</target>
+      </trans-unit>
+      <trans-unit id="299c7d50213965a3ffb9dbaa64f05ad3">
+        <source>New order, text to you</source>
+        <target>Comandă nouă, SMS pentru dumneavoastră</target>
+      </trans-unit>
+      <trans-unit id="38e79db3d01fc46f7f51f0a5e6888c6b">
+        <source>New orders: a text to you</source>
+        <target>Comenzi noi: un SMS pentru dumneavoastră</target>
+      </trans-unit>
+      <trans-unit id="1380186c5cb1ac08f1a6be339d035d66">
+        <source>New-order texts can go to at most %d numbers.</source>
+        <target>SMS-urile despre comenzi noi pot merge la cel mult %d numere.</target>
+      </trans-unit>
+      <trans-unit id="bceceef747cc4c1416decca622073035">
+        <source>No mobile number on the order address.</source>
+        <target>Nu există număr de mobil în adresa comenzii.</target>
+      </trans-unit>
+      <trans-unit id="10b5d4427ada9a6f95876870b668ccb6">
+        <source>No phone is linked to your account yet. Install the SMSTunnel app on your Android phone and sign in, or link it from Phones, then Add phone, in your dashboard.</source>
+        <target>Niciun telefon nu este încă legat de contul dumneavoastră. Instalați aplicația SMSTunnel pe telefonul Android și autentificați-vă sau legați-l din Phones, apoi Add phone, în panou.</target>
+      </trans-unit>
+      <trans-unit id="2139bc444f1fb97a47ad2c8fee38380f">
+        <source>No texts were sent about this customer.</source>
+        <target>Nu s-a trimis niciun SMS despre acest client.</target>
+      </trans-unit>
+      <trans-unit id="6c8cde9b2e6121aca8903d957f95f9bd">
+        <source>No texts yet. They show up here as orders come in.</source>
+        <target>Încă niciun SMS. Vor apărea aici pe măsură ce vin comenzile.</target>
+      </trans-unit>
+      <trans-unit id="3c8d5a29d8493af7344222d7767eb978">
+        <source>Not sent</source>
+        <target>Netrimis</target>
+      </trans-unit>
+      <trans-unit id="b2ee912b91d69b435159c7c3f6df7f5f">
+        <source>Number</source>
+        <target>Număr</target>
+      </trans-unit>
+      <trans-unit id="8d9da4bc0e49a50e09ac9f7e56789d39">
+        <source>Offline</source>
+        <target>Offline</target>
+      </trans-unit>
+      <trans-unit id="4c468bca167702bcd80be807aaf4e873">
+        <source>One or more numbers (at most 5), separated by commas, in international format such as +33612345678.</source>
+        <target>Unul sau mai multe numere (cel mult 5), separate prin virgulă, în format internațional, de exemplu +40721123456.</target>
+      </trans-unit>
+      <trans-unit id="54f664c70c22054ea0d8d26fc3997ce7">
+        <source>Online</source>
+        <target>Online</target>
+      </trans-unit>
+      <trans-unit id="afdb5b774f5a2e83cf82181fe87f7256">
+        <source>Only a text that did not go out can be sent again.</source>
+        <target>Doar un SMS care nu a plecat poate fi retrimis.</target>
+      </trans-unit>
+      <trans-unit id="265cebfe72ed6d5409541ce9383ad49f">
+        <source>Open the dashboard</source>
+        <target>Deschideți panoul</target>
+      </trans-unit>
+      <trans-unit id="2100f8f9b2d8fc28ca7ff5e5fb3854bb">
+        <source>Optional. Leave it empty to send from any of your phones. To always use one phone, copy its ID from Phones in your SMSTunnel dashboard.</source>
+        <target>Opțional. Lăsați-l gol pentru a trimite de pe oricare dintre telefoanele dumneavoastră. Pentru a folosi mereu același telefon, copiați ID-ul lui din Phones, în panoul SMSTunnel.</target>
+      </trans-unit>
+      <trans-unit id="a240fa27925a635b08dc28c9e4f9216d">
+        <source>Order</source>
+        <target>Comandă</target>
+      </trans-unit>
+      <trans-unit id="f66dcad8de0514176d8492ceaa9a53e1">
+        <source>Order updates: a text to the customer</source>
+        <target>Noutăți despre comandă: un SMS pentru client</target>
+      </trans-unit>
+      <trans-unit id="1302ad091bdbbb2f4c30b019496437eb">
+        <source>Paste the key below, add your number and save. Then send yourself a test text.</source>
+        <target>Lipiți cheia mai jos, adăugați numărul dumneavoastră și salvați. Apoi trimiteți-vă un SMS de test.</target>
+      </trans-unit>
+      <trans-unit id="bcc254b55c4a1babdf1dcb82c207506b">
+        <source>Phone</source>
+        <target>Telefon</target>
+      </trans-unit>
+      <trans-unit id="d3888448a58c1a1e99cb8555a2fc78ce">
+        <source>Phone ID</source>
+        <target>ID-ul telefonului</target>
+      </trans-unit>
+      <trans-unit id="e6475babd3a77ca559ebd54f8bd54165">
+        <source>Premium-rate numbers and short codes are never texted.</source>
+        <target>Nu se trimit niciodată SMS-uri la numere cu tarif special sau la numere scurte.</target>
+      </trans-unit>
+      <trans-unit id="b9139e607767e06b7a270b953f8828b8">
+        <source>Recent texts</source>
+        <target>SMS-uri recente</target>
+      </trans-unit>
+      <trans-unit id="917800a8cd157c69db8f7034083afdd3">
+        <source>Remove SMSTunnel, its settings and its log of texts?</source>
+        <target>Eliminați SMSTunnel, setările și istoricul SMS-urilor?</target>
+      </trans-unit>
+      <trans-unit id="6f35a7dbf930626bd638bdb3687311ea">
+        <source>SMSTunnel could not be reached: %s</source>
+        <target>SMSTunnel nu a putut fi contactat: %s</target>
+      </trans-unit>
+      <trans-unit id="e83338972f53546b2c69e986d75e71b6">
+        <source>SMSTunnel had a problem (HTTP %d). Try again in a few minutes.</source>
+        <target>SMSTunnel a avut o problemă (HTTP %d). Încercați din nou peste câteva minute.</target>
+      </trans-unit>
+      <trans-unit id="65b437a883329ea55eee802b8a2b70bb">
+        <source>SMSTunnel refused the API key. Check it in your SMSTunnel dashboard, under Apps.</source>
+        <target>SMSTunnel a refuzat cheia API. Verificați-o în panoul SMSTunnel, la Apps.</target>
+      </trans-unit>
+      <trans-unit id="11f4fa6afa35b1597bacf05446ee549e">
+        <source>SMSTunnel refused the text: %s</source>
+        <target>SMSTunnel a refuzat SMS-ul: %s</target>
+      </trans-unit>
+      <trans-unit id="256924fdae55beb0f7467aa8b2f431d9">
+        <source>SMSTunnel server</source>
+        <target>Server SMSTunnel</target>
+      </trans-unit>
+      <trans-unit id="ade324c5d0510e68ab33a30175ce449f">
+        <source>SMSTunnel: SMS notifications</source>
+        <target>SMSTunnel: notificări SMS</target>
+      </trans-unit>
+      <trans-unit id="e15f84db8bca52904d29936bc829f338">
+        <source>SMSTunnel: texts from your own phone</source>
+        <target>SMSTunnel: SMS-uri de pe propriul telefon</target>
+      </trans-unit>
+      <trans-unit id="38ff87749d5b0649cbb9ca59480cc44f">
+        <source>Save your API key first.</source>
+        <target>Salvați mai întâi cheia API.</target>
+      </trans-unit>
+      <trans-unit id="7a984f27c235c35579f1a714355e40f6">
+        <source>Send a test text</source>
+        <target>Trimiteți un SMS de test</target>
+      </trans-unit>
+      <trans-unit id="46734ff92523b8bd195dad5a89f01f7e">
+        <source>Send a test text to</source>
+        <target>Trimiteți un SMS de test la</target>
+      </trans-unit>
+      <trans-unit id="50ab1d847e175723e3f782f780d72b16">
+        <source>Send again</source>
+        <target>Retrimiteți</target>
+      </trans-unit>
+      <trans-unit id="e4b0c2b6d59cb4cf3e169a9886008087">
+        <source>Sending</source>
+        <target>Se trimite</target>
+      </trans-unit>
+      <trans-unit id="c141d895da94ee2a2c4609a02630aff7">
+        <source>Sends your texts</source>
+        <target>Trimite SMS-urile</target>
+      </trans-unit>
+      <trans-unit id="1bb8414788e1f06c16e0499f199884b0">
+        <source>Sent to the phone</source>
+        <target>Trimis la telefon</target>
+      </trans-unit>
+      <trans-unit id="9a7e58ee13cb727cb7c4acc68f4cafe5">
+        <source>Settings saved.</source>
+        <target>Setări salvate.</target>
+      </trans-unit>
+      <trans-unit id="d9c8f187972e6320a34e9c40b4cba605">
+        <source>Skipped</source>
+        <target>Omis</target>
+      </trans-unit>
+      <trans-unit id="46a2a41cc6e552044816a2d04634545d">
+        <source>State</source>
+        <target>Stare</target>
+      </trans-unit>
+      <trans-unit id="ec53a8c4f07baed5d8825072c89799be">
+        <source>Status</source>
+        <target>Status</target>
+      </trans-unit>
+      <trans-unit id="6c3bffa30822da8ea25de435fa457f9b">
+        <source>Status: %s</source>
+        <target>Status: %s</target>
+      </trans-unit>
+      <trans-unit id="1ddd098e85faf329eddf86df863a8f55">
+        <source>Test mode: texts go to this test server, not to smstunnel.io. Change it under Advanced.</source>
+        <target>Mod test: SMS-urile merg la acest server de test, nu la smstunnel.io. Schimbați-l la Avansat.</target>
+      </trans-unit>
+      <trans-unit id="aaaf7028b8b9c6ce59bd3d1ee80869b3">
+        <source>Test text</source>
+        <target>SMS de test</target>
+      </trans-unit>
+      <trans-unit id="2e080e50385b07b734506f3a050f7a26">
+        <source>Test text sent to %s. It leaves from your phone in a moment.</source>
+        <target>SMS de test trimis la %s. Pleacă de pe telefonul dumneavoastră în câteva momente.</target>
+      </trans-unit>
+      <trans-unit id="9dffbf69ffba8bc38bc4e01abf4b1675">
+        <source>Text</source>
+        <target>Text</target>
+      </trans-unit>
+      <trans-unit id="d6a2ad6d3ea4d0c7591b0bffc534d24d">
+        <source>Text customers about their orders</source>
+        <target>Trimiteți SMS-uri clienților despre comenzile lor</target>
+      </trans-unit>
+      <trans-unit id="37af2a1c8cf18354cef7169120a2a0af">
+        <source>Text for "%s"</source>
+        <target>Text pentru „%s”</target>
+      </trans-unit>
+      <trans-unit id="eef39dcf5ae57929351df1d4ddb9823f">
+        <source>Text me about new orders</source>
+        <target>Trimiteți-mi un SMS la fiecare comandă nouă</target>
+      </trans-unit>
+      <trans-unit id="6e81bf256c1ca17d84ebd0862657673b">
+        <source>Text sent again to %s.</source>
+        <target>SMS retrimis la %s.</target>
+      </trans-unit>
+      <trans-unit id="18382b686ed9f4e24ca00f5acf429b69">
+        <source>Text your customers about their orders, and yourself about new orders, from your own phone and your own number.</source>
+        <target>Trimiteți SMS-uri clienților despre comenzile lor și dumneavoastră despre comenzile noi, de pe propriul telefon și de pe propriul număr.</target>
+      </trans-unit>
+      <trans-unit id="90bcc49318a67249a870a01dec718fb7">
+        <source>The number on the order address is not a mobile number SMSTunnel can text.</source>
+        <target>Numărul din adresa comenzii nu este un număr de mobil la care SMSTunnel poate trimite SMS-uri.</target>
+      </trans-unit>
+      <trans-unit id="1c3e074574fdb97ce0bd51eadd8a3c33">
+        <source>The phone ID saved below is not one of these phones. Copy it again, or leave the field empty to send from any of your phones.</source>
+        <target>ID-ul de telefon salvat mai jos nu aparține niciunuia dintre aceste telefoane. Copiați-l din nou sau lăsați câmpul gol pentru a trimite de pe oricare dintre telefoanele dumneavoastră.</target>
+      </trans-unit>
+      <trans-unit id="dd080de54ec1002f39d891016ff2cafd">
+        <source>The server address must start with https:// (or http:// for a test server).</source>
+        <target>Adresa serverului trebuie să înceapă cu https:// (sau http:// pentru un server de test).</target>
+      </trans-unit>
+      <trans-unit id="b14a265b33314621bf41aac86381b13c">
+        <source>The text goes to the mobile number of the order address, in the language of the order. Customers can reply: the answer reaches your phone.</source>
+        <target>SMS-ul merge la numărul de mobil din adresa comenzii, în limba comenzii. Clienții pot răspunde: răspunsul ajunge pe telefonul dumneavoastră.</target>
+      </trans-unit>
+      <trans-unit id="7e36b358f748e9538d9ab4264d1389c2">
+        <source>The texts about this customer could not be deleted.</source>
+        <target>SMS-urile despre acest client nu au putut fi șterse.</target>
+      </trans-unit>
+      <trans-unit id="5ebca9bad8cbdf8fdb250b13423086c4">
+        <source>This API key may not send texts. Create a new one under Apps, then Add an app.</source>
+        <target>Această cheie API nu are voie să trimită SMS-uri. Creați una nouă la Apps, apoi Add an app.</target>
+      </trans-unit>
+      <trans-unit id="d6f97b859723081b73c2de52a762128a">
+        <source>This does not look like a phone ID. Copy it again from Phones in your SMSTunnel dashboard, or leave the field empty.</source>
+        <target>Acesta nu pare un ID de telefon. Copiați-l din nou din Phones, în panoul SMSTunnel, sau lăsați câmpul gol.</target>
+      </trans-unit>
+      <trans-unit id="0f063b5e48a6b688d236fd9512f682fd">
+        <source>This does not look like an SMSTunnel API key. Copy it again from Apps in your SMSTunnel dashboard.</source>
+        <target>Aceasta nu pare o cheie API SMSTunnel. Copiați-o din nou din Apps, în panoul SMSTunnel.</target>
+      </trans-unit>
+      <trans-unit id="cc180bc5e77fde6a27e4339b2e344aa1">
+        <source>This is a test text from {shop_name}. Your order texts will come from this phone.</source>
+        <target>Acesta este un SMS de test de la {shop_name}. SMS-urile comenzilor vor pleca de pe acest telefon.</target>
+      </trans-unit>
+      <trans-unit id="054c8532f1d9ba57c47654c2fc9db45b">
+        <source>This log keeps the last 1000 texts. Uninstalling the module deletes it.</source>
+        <target>Acest istoric păstrează ultimele 1000 de SMS-uri. Dezinstalarea modulului îl șterge.</target>
+      </trans-unit>
+      <trans-unit id="c0f1a7545f23974c9f06ae071ef478d0">
+        <source>Too many texts at once, or the daily limit of your plan is reached. SMSTunnel says: %s</source>
+        <target>Prea multe SMS-uri deodată sau s-a atins limita zilnică a planului. SMSTunnel spune: %s</target>
+      </trans-unit>
+      <trans-unit id="e616d6ba3037e82262f89c062fa757cb">
+        <source>Tried %d times</source>
+        <target>%d încercări</target>
+      </trans-unit>
+      <trans-unit id="87d8b7f1e2244199b1efe33cf727f8f7">
+        <source>Waiting for the phone</source>
+        <target>Așteaptă telefonul</target>
+      </trans-unit>
+      <trans-unit id="03f4909bda7ad77b1b6eaa71643fe859">
+        <source>When the order status becomes</source>
+        <target>Când statusul comenzii devine</target>
+      </trans-unit>
+      <trans-unit id="4fb7ee9c5e59686e86432b474bd63b51">
+        <source>When the phone is offline, texts wait on your account and go out as soon as it is back online.</source>
+        <target>Când telefonul este offline, SMS-urile așteaptă în contul dumneavoastră și pleacă imediat ce revine online.</target>
+      </trans-unit>
+      <trans-unit id="658ecf6cae2c487b3b6e20026422d1a4">
+        <source>You can use: %s</source>
+        <target>Puteți folosi: %s</target>
+      </trans-unit>
+      <trans-unit id="5f1d026259120017cc38de2f942dd7db">
+        <source>Your SMSTunnel account</source>
+        <target>Contul dumneavoastră SMSTunnel</target>
+      </trans-unit>
+      <trans-unit id="270e074eacf5afb0f41b8d4e31081bea">
+        <source>Your numbers</source>
+        <target>Numerele dumneavoastră</target>
+      </trans-unit>
+      <trans-unit id="940320b357d0fc6a503d55db3727da91">
+        <source>Your phone is offline. The test text to %s waits on your account and goes out when the phone is back online.</source>
+        <target>Telefonul dumneavoastră este offline. SMS-ul de test către %s așteaptă în cont și pleacă atunci când telefonul revine online.</target>
+      </trans-unit>
+      <trans-unit id="722b3aa91947907695f6b9bbc9f433a0">
+        <source>Your phone is offline. The text to %s waits on your account and goes out when the phone is back online.</source>
+        <target>Telefonul dumneavoastră este offline. SMS-ul către %s așteaptă în cont și pleacă atunci când telefonul revine online.</target>
+      </trans-unit>
+      <trans-unit id="4c74aafe67dda9472228d5d7f9527cdb">
+        <source>Your phones</source>
+        <target>Telefoanele dumneavoastră</target>
+      </trans-unit>
+      <trans-unit id="c654a8868534ded496fe91e58421db9d">
+        <source>Your shop hands each text to your SMSTunnel account, and your Android phone sends it from its own SIM. Customers see your number and can reply to it.</source>
+        <target>Magazinul predă fiecare SMS contului dumneavoastră SMSTunnel, iar telefonul Android îl trimite de pe propria cartelă SIM. Clienții văd numărul dumneavoastră și pot răspunde.</target>
+      </trans-unit>
+      <trans-unit id="840efe063120cacd812357b9ba67e242">
+        <source>{shop_name}: new order {order_reference} from {firstname} {lastname}, {total_paid}.</source>
+        <target>{shop_name}: comanda noua {order_reference} de la {firstname} {lastname}, {total_paid}.</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

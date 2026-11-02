@@ -1,4 +1,5 @@
 <?php
+
 /**
  * SMSTunnel: SMS notifications for PrestaShop.
  *
@@ -20,18 +21,18 @@ use SmsTunnel\PrestaShop\Api\Client;
  */
 final class Settings
 {
-    const API_KEY = 'SMSTUNNEL_API_KEY';
-    const DEVICE_ID = 'SMSTUNNEL_DEVICE_ID';
-    const API_URL = 'SMSTUNNEL_API_URL';
-    const OWNER_ENABLED = 'SMSTUNNEL_OWNER_ENABLED';
-    const OWNER_NUMBERS = 'SMSTUNNEL_OWNER_NUMBERS';
-    const OWNER_TEXT = 'SMSTUNNEL_OWNER_TEXT';
-    const CUSTOMER_ENABLED = 'SMSTUNNEL_CUSTOMER_ENABLED';
-    const CUSTOMER_STATES = 'SMSTUNNEL_CUSTOMER_STATES';
-    const CUSTOMER_TEXTS = 'SMSTUNNEL_CUSTOMER_TEXTS';
+    public const API_KEY = 'SMSTUNNEL_API_KEY';
+    public const DEVICE_ID = 'SMSTUNNEL_DEVICE_ID';
+    public const API_URL = 'SMSTUNNEL_API_URL';
+    public const OWNER_ENABLED = 'SMSTUNNEL_OWNER_ENABLED';
+    public const OWNER_NUMBERS = 'SMSTUNNEL_OWNER_NUMBERS';
+    public const OWNER_TEXT = 'SMSTUNNEL_OWNER_TEXT';
+    public const CUSTOMER_ENABLED = 'SMSTUNNEL_CUSTOMER_ENABLED';
+    public const CUSTOMER_STATES = 'SMSTUNNEL_CUSTOMER_STATES';
+    public const CUSTOMER_TEXTS = 'SMSTUNNEL_CUSTOMER_TEXTS';
 
     /** Every key the module stores; uninstalling deletes them. */
-    const KEYS = [
+    public const KEYS = [
         self::API_KEY,
         self::DEVICE_ID,
         self::API_URL,
@@ -44,7 +45,7 @@ final class Settings
     ];
 
     /** New-order texts go to at most this many numbers. */
-    const MAX_OWNER_NUMBERS = 5;
+    public const MAX_OWNER_NUMBERS = 5;
 
     /** @var int|null */
     private $idShopGroup;
@@ -155,7 +156,9 @@ final class Settings
     {
         $parts = preg_split('/[,;\r\n]+/', $numbers);
 
-        return array_values(array_filter(array_map('trim', is_array($parts) ? $parts : []), 'strlen'));
+        return array_values(array_filter(array_map('trim', is_array($parts) ? $parts : []), function ($part) {
+            return $part !== '';
+        }));
     }
 
     /**
