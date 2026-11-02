@@ -57,6 +57,7 @@ try {
   sql(project, 'UPDATE ps_employee SET id_lang = 1 WHERE id_employee = 1');
   const SHIPPED = psHelper(project, 'state-id', 'PS_OS_SHIPPING').id;
   const DELIVERED = psHelper(project, 'state-id', 'PS_OS_DELIVERED').id;
+  const PAYMENT = psHelper(project, 'state-id', 'PS_OS_PAYMENT').id;
 
   // 1. Install from the zip, like a merchant.
   tokens = await loginBackOffice(bo, base);
@@ -168,7 +169,20 @@ try {
   const resent = await waitForTexts(OWNER, started, 1, (t) => t.message.includes(order4.reference));
   report.ok('the text sent again reached SMSTunnel', resent.length === 1, resent[0] && resent[0].message);
   await bo.goto(configureUrl);
-  await bo.locator('#smstunnel-log').screenshot({ path: path.join(screensDir, `${shots}-3-recent-texts.png`) });
+  const orderLink = await bo.locator('#smstunnel-log tr', { hasText: order1.reference }).locator('a').first().getAttribute('href').catch(() => null);
+  if (orderLink) {
+    // PrestaShop 8 writes the link relative to the site root.
+    await bo.goto(new URL(orderLink, bo.url()).href);
+    await bo.waitForLoadState('networkidle').catch(() => {});
+  }
+  report.ok('the log links each text to its order page', Boolean(orderLink) && (await bo.content()).includes(order1.reference) && /orders/.test(bo.url()), bo.url().split('?')[0]);
+  await bo.goto(configureUrl);
+  // A clip of the full page: PrestaShop 9's sticky header would cover the top of an element screenshot.
+  const logBox = await bo.$eval('#smstunnel-log', (el) => {
+    const r = el.getBoundingClientRect();
+    return { x: r.left + window.scrollX, y: r.top + window.scrollY, width: r.width, height: r.height };
+  });
+  await bo.screenshot({ path: path.join(screensDir, `${shots}-3-recent-texts.png`), fullPage: true, clip: logBox });
 
   // 11. French (when the shop has it): the module's own catalogue in the back office, and a French customer
   // gets the suggested text in French.
@@ -179,11 +193,22 @@ try {
     const heading = (await bo.locator('#smstunnel-status .panel-heading').innerText()).trim();
     report.ok('back office in French: the module is in French', /depuis votre propre téléphone/i.test(heading), heading);
     await bo.screenshot({ path: path.join(screensDir, `${shots}-4-back-office-in-french.png`), fullPage: false });
-    const order6 = await placeOrder({ phone: '(415) 555-0126', firstname: 'Marie', lastname: 'Durand', lang: 'fr' });
-    await setStatus(order6.id, SHIPPED);
-    const inFrench = await expectTexts('+14155550126', 1, (t) => t.message.includes(order6.reference), order6.id);
-    report.ok("customer's text is in the language of the order", Boolean(inFrench[0]) && /^Bonjour Marie, votre commande \S+ de .+ est en route\./.test(inFrench[0].message), inFrench[0] && inFrench[0].message);
+    // Back to an English back office, and "Payment accepted" texts the customer too (its text has the total).
     sql(project, 'UPDATE ps_employee SET id_lang = 1 WHERE id_employee = 1');
+    await bo.goto(configureUrl);
+    await bo.check(`#SMSTUNNEL_STATES_${PAYMENT}`);
+    await saveSettings({});
+
+    const order6 = await placeOrder({ phone: '(415) 555-0126', firstname: 'Marie', lastname: 'Durand', lang: 'fr' });
+    const ownerForFrench = await expectTexts(OWNER, 1, (t) => t.message.includes(order6.reference), order6.id);
+    report.ok("owner's text uses the shop language's price format during a French checkout", Boolean(ownerForFrench[0]) && /€\d+\.\d\d\.$/.test(ownerForFrench[0].message), ownerForFrench[0] && ownerForFrench[0].message);
+    await setStatus(order6.id, PAYMENT);
+    const paidInFrench = await expectTexts('+14155550126', 1, (t) => t.message.includes(order6.reference), order6.id);
+    report.ok("customer's text uses the order language's price format, sent from an English back office", Boolean(paidInFrench[0]) && /paiement de \d+,\d\d € pour la commande/.test(paidInFrench[0].message), paidInFrench[0] && paidInFrench[0].message);
+    await setStatus(order6.id, SHIPPED);
+    const inFrench = await expectTexts('+14155550126', 2, (t) => t.message.includes(order6.reference), order6.id);
+    const shippedFr = inFrench.find((t) => /en route/.test(t.message));
+    report.ok("customer's text is in the language of the order", Boolean(shippedFr) && /^Bonjour Marie, votre commande \S+ de .+ est en route\./.test(shippedFr.message), shippedFr && shippedFr.message);
   }
 
   // 12. GDPR export and erasure (PrestaShop's psgdpr module calls these hooks).

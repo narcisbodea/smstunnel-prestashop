@@ -615,7 +615,8 @@ class Smstunnel extends Module
             $error = (string) $row['error'];
             $rows[] = [
                 'id' => (int) $row['id_smstunnel_log'],
-                'date' => (string) $row['date_upd'],
+                // When the text was written; the list is in that order ("Tried N times" tells about later tries).
+                'date' => (string) $row['date_add'],
                 'what' => $what,
                 'order' => (int) $row['id_order'] > 0 ? (string) ($row['reference'] ?: '#' . (int) $row['id_order']) : '',
                 'order_url' => (int) $row['id_order'] > 0 ? $this->orderUrl((int) $row['id_order']) : '',
@@ -719,10 +720,14 @@ class Smstunnel extends Module
         return $this->moduleAdminLink() . '&token=' . Tools::getAdminTokenLite('AdminModules');
     }
 
+    /**
+     * The order's page in the back office. Legacy parameters: PrestaShop 8 turns them into the order page's
+     * route, and PrestaShop 9 redirects them there.
+     */
     private function orderUrl(int $idOrder): string
     {
         try {
-            return (string) $this->context->link->getAdminLink('AdminOrders', true, ['route' => 'admin_orders_view', 'orderId' => $idOrder]);
+            return (string) $this->context->link->getAdminLink('AdminOrders', true, [], ['id_order' => $idOrder, 'vieworder' => 1]);
         } catch (Throwable $e) {
             return '';
         }

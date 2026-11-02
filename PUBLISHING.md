@@ -61,7 +61,7 @@ $this->module_key = 'the 32-character key from your seller account';
 In the seller account: **Products > New > Add a Module**. It needs:
 
 - **Name**: "SMSTunnel: SMS notifications" (Addons forbids "PrestaShop" and "module" in names).
-- **Icon**: 57 × 57 px, `marketing/addons-icon-57.png`.
+- **Icon**: 57 × 57 px, `assets/addons-icon-57.png`.
 - **Images**: at least 3, ideally square. Use the back office screenshots in `D:\ANDROID\integrari\prestashop-screens\` (configuration page, recent texts, back office in French), cropped square.
 - **Short description**, a **long description** with the features, at least one **benefit for the merchant** and one **benefit for the customer**. The texts of `site-page.md` can be reused.
 - **Keywords**: at least 5 in every language of the page, for example: SMS, SMS notification, order status SMS, shipping notification, text message, tracking number SMS, Android phone, order alert.

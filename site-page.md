@@ -6,9 +6,10 @@ project; this file only holds the words, the structure and the assets to use.
 - **Page title (≤ 60 chars):** SMSTunnel for PrestaShop: order texts from your own phone
 - **Meta description (≤ 155 chars):** Text your PrestaShop customers about their orders from your own Android phone
   and number: shipped with tracking, delivered, canceled. Free module.
-- **Screenshots:** `D:\ANDROID\integrari\prestashop-screens\` (`ps9-2-configuration.png` the module page,
-  `ps9-3-recent-texts.png` the last texts, `ps9-4-back-office-in-french.png` the page in French; the same with
-  `ps8-` for PrestaShop 8.1)
+- **Screenshots:** for the page, the clean ones in `docs/screenshots/` of this repository
+  (`phones-and-test-text.png`, `configuration.png`, `recent-texts.png`, `back-office-in-french.png`); the test
+  runs' own captures are in `D:\ANDROID\integrari\prestashop-screens\` (`ps8-*` PrestaShop 8.1, `ps9-*` 9.2, and
+  `received-texts.png`, what the test server received)
 - **Download:** `https://github.com/narcisbodea/smstunnel-prestashop/releases/latest/download/smstunnel.zip`
   (once the GitHub release exists; later also the Addons listing)
 - **Non-affiliation line (keep it on the page):** SMSTunnel for PrestaShop is not affiliated with, endorsed by, or
@@ -101,5 +102,5 @@ address, no order contents.
 
 ---
 
-Wording rules for this page: say "your own phone", "your own number"; one text per recipient; never "gateway",
-"bulk", "campaign", "marketing" or "mass"; never imply that a server controls the phone.
+Wording for this page follows the shared rules: "your own phone", "your own number", one text per recipient, and never
+imply that a server controls the phone.

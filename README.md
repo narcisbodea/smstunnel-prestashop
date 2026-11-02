@@ -159,6 +159,7 @@ Send only texts that people expect from you: order updates, alerts to yourself, 
 bash tools/build.sh                 # build/smstunnel.zip (Composer autoloader, index.php in every folder)
 bash tools/check.sh                 # php -l and unit tests on PHP 7.2, 7.4, 8.1 and 8.5
 node tools/translations.mjs         # rebuild the XLIFF catalogues (fails on a missing translation)
+node tools/user-guide.mjs           # smstunnel/docs/readme_en.pdf, the user guide Addons expects in docs/
 cd tools/dev && composer install    # PrestaShop's php-dev-tools, PHPStan, php-cs-fixer (not shipped)
 tools/dev/vendor/bin/php-cs-fixer fix --dry-run --diff
 bash tools/check-static.sh smst-int-ps8-prestashop-1 smst-int-ps9-prestashop-1   # PHPStan level 6
