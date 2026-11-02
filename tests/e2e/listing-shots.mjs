@@ -41,14 +41,36 @@ await page.goto(page.url().replace(/#.*$/, ''));
 await page.waitForLoadState('networkidle').catch(() => {});
 
 // Show the page as on smstunnel.io: no test banner, the default server.
-await page.evaluate(() => {
-  document.querySelectorAll('#smstunnel-status .alert-warning').forEach((el) => el.remove());
-  const field = document.getElementById('SMSTUNNEL_API_URL');
-  if (field) field.value = 'https://smstunnel.io';
-});
+const asOnSmstunnel = () =>
+  page.evaluate(() => {
+    document.querySelectorAll('#smstunnel-status .alert-warning').forEach((el) => el.remove());
+    const field = document.getElementById('SMSTUNNEL_API_URL');
+    if (field) field.value = 'https://smstunnel.io';
+  });
+await asOnSmstunnel();
 await page.locator('#smstunnel-status').screenshot({ path: path.join(out, 'phones-and-test-text.png') });
-await page.screenshot({ path: path.join(out, 'configuration.png'), fullPage: true });
-await page.locator('#smstunnel-status').evaluate((el) => el.scrollIntoView());
+
+// The whole page in one picture, in a window as tall as the page: a full-page capture would leave the fixed
+// side menu one window high.
+for (let i = 0; i < 3; i++) {
+  const height = await page.evaluate(() => document.documentElement.scrollHeight);
+  if (height === page.viewportSize().height) break;
+  await page.setViewportSize({ width: 1400, height });
+  await page.waitForTimeout(300);
+}
+await page.screenshot({ path: path.join(out, 'configuration.png') });
+await page.setViewportSize({ width: 1400, height: 1000 });
+
+// The same page with the back office in French, when the shop has French.
+const french = sql(project, "SELECT id_lang FROM ps_lang WHERE iso_code = 'fr' AND active = 1");
+if (french.length) {
+  sql(project, `UPDATE ps_employee SET id_lang = ${french[0][0]} WHERE id_employee = 1`);
+  await page.reload();
+  await page.waitForLoadState('networkidle').catch(() => {});
+  await asOnSmstunnel();
+  await page.screenshot({ path: path.join(out, 'back-office-in-french.png') });
+  sql(project, 'UPDATE ps_employee SET id_lang = 1 WHERE id_employee = 1');
+}
 
 docker(['exec', '-u', 'www-data', container, 'php', '/var/www/html/bin/console', 'prestashop:module', 'uninstall', 'smstunnel']);
 await browser.close();

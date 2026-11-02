@@ -2,6 +2,7 @@
 #   PS_IMAGE=prestashop/prestashop:8.1.7-7.4-apache PS_PORT=8471 docker compose -p smst-int-ps8 -f tests/docker/docker-compose.yml up -d
 #   PS_IMAGE=prestashop/prestashop:9.2.0            PS_PORT=8472 docker compose -p smst-int-ps9 -f tests/docker/docker-compose.yml up -d
 # Tear down with: docker compose -p <project> -f tests/docker/docker-compose.yml down -v
+# The shop runs in debug mode, as the tests expect. PS_DEV_MODE=0 turns it off, for screenshots without its toolbar.
 #
 # The shop reaches a SMSTunnel test server on the host at http://host.docker.internal:<port>.
 services:
@@ -35,7 +36,7 @@ services:
       PS_DOMAIN: localhost:${PS_PORT:-8471}
       PS_FOLDER_ADMIN: admin-dev
       PS_FOLDER_INSTALL: install-dev
-      PS_DEV_MODE: 1
+      PS_DEV_MODE: ${PS_DEV_MODE:-1}
       PS_LANGUAGE: en
       PS_COUNTRY: FR
       PS_ALL_LANGUAGES: 0
