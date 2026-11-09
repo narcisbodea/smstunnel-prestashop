@@ -2,6 +2,12 @@
 
 All notable changes to SMSTunnel for PrestaShop. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and versions follow [Semantic Versioning](https://semver.org/).
 
+## [1.0.1] - 2026-11-09
+
+### Fixed
+
+- A number written with the trunk prefix in brackets after the calling code, such as `+49 (0) 170 1234567` or `+40 (0)722 123 456`, kept the 0 as a digit, which gave a wrong number. The `(0)` is now left out: `+491701234567`, `+40722123456`.
+
 ## [1.0.0] - 2026-11-02
 
 First version.
@@ -16,4 +22,5 @@ First version.
 - Back office in English, French, Spanish, Italian, Romanian and German.
 - PrestaShop 8.1 to 9.2, PHP 7.2.5 to 8.5.
 
+[1.0.1]: https://github.com/narcisbodea/smstunnel-prestashop/releases/tag/v1.0.1
 [1.0.0]: https://github.com/narcisbodea/smstunnel-prestashop/releases/tag/v1.0.0

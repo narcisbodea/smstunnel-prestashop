@@ -65,7 +65,7 @@ Leave a text as suggested, or empty, and the module uses its suggested text in t
 
 ## Phone numbers
 
-The customer's number comes from the order's delivery address, mobile phone first, then phone, then the invoice address. A number written without `+` or `00` is completed with the calling code of the address country: in France `06 12 34 56 78` becomes `+33612345678`, in Romania `0721 123 456` becomes `+40721123456`, in the United States `(415) 555-0123` becomes `+14155550123`. Countries whose numbers keep their leading 0 (Italy, San Marino, Vatican, Côte d'Ivoire, Benin, Gabon, Congo) keep it. SMSTunnel also gets the country code as `defaultCountryCode`.
+The customer's number comes from the order's delivery address, mobile phone first, then phone, then the invoice address. A number written without `+` or `00` is completed with the calling code of the address country: in France `06 12 34 56 78` becomes `+33612345678`, in Romania `0721 123 456` becomes `+40721123456`, in the United States `(415) 555-0123` becomes `+14155550123`. Countries whose numbers keep their leading 0 (Italy, San Marino, Vatican, Côte d'Ivoire, Benin, Gabon, Congo) keep it. A `(0)` written after the calling code, as in `+49 (0) 170 1234567`, is left out. SMSTunnel also gets the country code as `defaultCountryCode`.
 
 A number that is not valid in international format, a premium-rate number (such as `+33 89…`, `+44 90…`, `+1 900…`), a short code or a satellite network is skipped: the order goes on, and **Recent texts** says why no text went out. These are the checks of the SMSTunnel WordPress plugin.
 

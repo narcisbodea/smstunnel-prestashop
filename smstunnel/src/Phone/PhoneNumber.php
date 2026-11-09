@@ -80,6 +80,8 @@ final class PhoneNumber
             return ['', self::MISSING];
         }
         $raw = trim((string) $raw);
+        // "+49 (0) 170 1234567": the (0) is the trunk prefix written for local callers, not a digit to dial.
+        $raw = trim((string) preg_replace('/\(\s*0\s*\)/', ' ', $raw));
         $digits = (string) preg_replace('/\D+/', '', $raw);
         if ($digits === '') {
             return ['', $raw === '' ? self::MISSING : self::INVALID];
