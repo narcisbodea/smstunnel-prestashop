@@ -43,7 +43,7 @@ class Smstunnel extends Module
     {
         $this->name = 'smstunnel';
         $this->tab = 'emailing';
-        $this->version = '1.0.1';
+        $this->version = '1.0.2';
         $this->author = 'NARBOWEB SRL';
         $this->need_instance = 0;
         $this->bootstrap = true;

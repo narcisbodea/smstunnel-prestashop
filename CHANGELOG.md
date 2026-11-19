@@ -2,6 +2,12 @@
 
 All notable changes to SMSTunnel for PrestaShop. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and versions follow [Semantic Versioning](https://semver.org/).
 
+## [1.0.2] - 2026-11-19
+
+### Fixed
+
+- A Brazilian number from area code 55 (Rio Grande do Sul) typed without `+55`, such as `(55) 99123-4567`, was read as if it began with the calling code, which gave a wrong number (`+55991234567`). It now gets the calling code: `+5555991234567`.
+
 ## [1.0.1] - 2026-11-09
 
 ### Fixed
@@ -22,5 +28,6 @@ First version.
 - Back office in English, French, Spanish, Italian, Romanian and German.
 - PrestaShop 8.1 to 9.2, PHP 7.2.5 to 8.5.
 
+[1.0.2]: https://github.com/narcisbodea/smstunnel-prestashop/releases/tag/v1.0.2
 [1.0.1]: https://github.com/narcisbodea/smstunnel-prestashop/releases/tag/v1.0.1
 [1.0.0]: https://github.com/narcisbodea/smstunnel-prestashop/releases/tag/v1.0.0

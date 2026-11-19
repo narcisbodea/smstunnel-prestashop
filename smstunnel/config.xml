@@ -2,7 +2,7 @@
 <module>
     <name>smstunnel</name>
     <displayName><![CDATA[SMSTunnel: SMS notifications]]></displayName>
-    <version><![CDATA[1.0.1]]></version>
+    <version><![CDATA[1.0.2]]></version>
     <description><![CDATA[Text your customers about their orders, and yourself about new orders, from your own phone and your own number.]]></description>
     <author><![CDATA[NARBOWEB SRL]]></author>
     <tab><![CDATA[emailing]]></tab>
